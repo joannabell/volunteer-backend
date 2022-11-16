@@ -4,7 +4,7 @@ class CreateActivities < ActiveRecord::Migration[7.0]
       t.string :organization
       t.string :activity_name
       t.string :activity_description
-
+      t.string :image
       t.timestamps
     end
   end
