@@ -15,6 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_14_163605) do
     t.string "organization"
     t.string "activity_name"
     t.string "activity_description"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
