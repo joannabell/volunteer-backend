@@ -1,27 +1,99 @@
 puts "Seeding campers..."
 volunteer1 =
-  Volunteer.create(name: "Caitlin Brown", age: 18, email: "cbrown@gmail.com")
+  Volunteer.create(
+    name: "Caitlin Brown",
+    age: 18,
+    email: "cbrown@gmail.com",
+    user_id:
+      User.create(
+        username: "Caitlin",
+        password_digest:
+          BCrypt::Engine.hash_secret("Caitlin", BCrypt::Engine.generate_salt)
+      ).id
+  )
 volunteer2 =
-  Volunteer.create(name: "Lizzie Avery", age: 29, email: "lavery@gmail.com")
+  Volunteer.create(
+    name: "Lizzie Avery",
+    age: 29,
+    email: "lavery@gmail.com",
+    user_id:
+      User.create(
+        username: "Lizzie",
+        password_digest:
+          BCrypt::Engine.hash_secret("Lizzie", BCrypt::Engine.generate_salt)
+      ).id
+  )
 volunteer3 =
-  Volunteer.create(name: "Tom Tyler", age: 35, email: "ttyler@gmail.com")
+  Volunteer.create(
+    name: "Tom Tyler",
+    age: 35,
+    email: "ttyler@gmail.com",
+    user_id:
+      User.create(
+        username: "Tom",
+        password_digest:
+          BCrypt::Engine.hash_secret("Tom", BCrypt::Engine.generate_salt)
+      ).id
+  )
 volunteer4 =
   Volunteer.create(
     name: "Morgan Chamberlain",
     age: 55,
-    email: "mchamberlain@gmail.com"
+    email: "mchamberlain@gmail.com",
+    user_id:
+      User.create(
+        username: "Morgan",
+        password_digest:
+          BCrypt::Engine.hash_secret("Morgan", BCrypt::Engine.generate_salt)
+      ).id
   )
 volunteer5 =
-  Volunteer.create(name: "Danny Reyes", age: 41, email: "dreyes@gmail.com")
+  Volunteer.create(
+    name: "Danny Reyes",
+    age: 41,
+    email: "dreyes@gmail.com",
+    user_id:
+      User.create(
+        username: "Danny",
+        password_digest:
+          BCrypt::Engine.hash_secret("Danny", BCrypt::Engine.generate_salt)
+      ).id
+  )
 volunteer6 =
-  Volunteer.create(name: "Peter Trapini", age: 38, email: "ptrapini@gmail.com")
+  Volunteer.create(
+    name: "Peter Trapini",
+    age: 38,
+    email: "ptrapini@gmail.com",
+    user_id:
+      User.create(
+        username: "Peter",
+        password_digest:
+          BCrypt::Engine.hash_secret("Peter", BCrypt::Engine.generate_salt)
+      ).id
+  )
 volunteer7 =
-  Volunteer.create(name: "Amanda Clark", age: 24, email: "aclark@gmail.com")
+  Volunteer.create(
+    name: "Amanda Clark",
+    age: 24,
+    email: "aclark@gmail.com",
+    user_id:
+      User.create(
+        username: "Amanda",
+        password_digest:
+          BCrypt::Engine.hash_secret("Amanda", BCrypt::Engine.generate_salt)
+      ).id
+  )
 volunteer8 =
   Volunteer.create(
     name: "Nick Sumeralls",
     age: 34,
-    email: "nsumeralls@gmail.com"
+    email: "nsumeralls@gmail.com",
+    user_id:
+      User.create(
+        username: "Nick",
+        password_digest:
+          BCrypt::Engine.hash_secret("Nick", BCrypt::Engine.generate_salt)
+      ).id
   )
 
 puts "Seeding activities..."
