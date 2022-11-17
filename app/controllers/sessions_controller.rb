@@ -1,3 +1,5 @@
+require "byebug"
+
 class SessionsController < ApplicationController
   def password(new_password)
     salt = BCrypt::Engine.generate_salt
@@ -14,13 +16,12 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(username: params[:username])
-
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
       render json: user, status: :created
     else
       render json: {
-               error: "Invalid username or password"
+               errors: ["Invalid username or password"]
              },
              status: :unauthorized
     end
@@ -29,11 +30,5 @@ class SessionsController < ApplicationController
   def destroy
     session.delete :user_id
     head :no_content
-  end
-
-  private
-
-  def user_params
-    params.permit(:username, :password)
   end
 end
